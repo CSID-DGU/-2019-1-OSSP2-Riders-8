@@ -155,7 +155,7 @@ class App extends BaseComponent {
         delete window.__PRELOADED_ALGORITHM__;
         return Promise.reject(new Error('Algorithm Not Found'));
       } else if (categoryKey && algorithmKey) {
-        return AlgorithmApi.getAlgorithm(categoryKey, algorithmKey)
+        return AlgorithmApi.getAlgorithm(categoryKey, algorithmKey, ext)
           .then(({ algorithm }) => this.props.setAlgorithm(algorithm));
       } else if (gistId === 'new' && visualizationId) {
         return VisualizationApi.getVisualization(visualizationId)
