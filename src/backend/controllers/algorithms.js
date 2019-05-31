@@ -30,8 +30,10 @@ router.route('/')
 
 router.route('/:categoryKey/:algorithmKey')
   .get((req, res, next) => {
+    var ext = '.' + req.query[0];
     const { categoryKey, algorithmKey } = req.params;
-    const algorithm = hierarchy.find(categoryKey, algorithmKey);
+    var algorithm = hierarchy.find(categoryKey, algorithmKey);
+    showExtFiles(algorithm.files, ext);
     if (!algorithm) return next(new NotFoundError());
     res.json({ algorithm });
   });
@@ -45,5 +47,20 @@ router.route('/sitemap.txt')
     res.set('Content-Type', 'text/plain');
     res.send(urls.join('\n'));
   });
+
+  function showExtFiles(files, ext) {
+    const indexAry = [];
+    files.forEach(function(item, index) {
+      if (!item.name.includes(ext) && !item.name.includes('.md')) {
+        indexAry.push(index);
+      }
+    });
+    var index = 0;
+    indexAry.forEach(function(item) {
+      var count = item - index;
+      files.splice(count, 1);
+      index++;
+    });
+  }
 
 export default router;
