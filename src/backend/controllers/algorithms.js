@@ -32,6 +32,7 @@ router.route('/:categoryKey/:algorithmKey')
   .get((req, res, next) => {
     var ext = '.' + req.query[0];
     const { categoryKey, algorithmKey } = req.params;
+    hierarchy.refresh();
     var algorithm = hierarchy.find(categoryKey, algorithmKey);
     showExtFiles(algorithm.files, ext);
     if (!algorithm) return next(new NotFoundError());
