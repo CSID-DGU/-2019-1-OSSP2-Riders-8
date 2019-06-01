@@ -37,6 +37,7 @@ class App extends BaseComponent {
     this.handleClickTitleBar = this.handleClickTitleBar.bind(this);
     this.loadScratchPapers = this.loadScratchPapers.bind(this);
     this.handleChangeWorkspaceWeights = this.handleChangeWorkspaceWeights.bind(this);
+    this.handleClickLang = this.handleClickLang.bind(this);
   }
 
   componentDidMount() {
@@ -220,6 +221,13 @@ class App extends BaseComponent {
     this.toggleNavigatorOpened();
   }
 
+  handleClickLang(ext) {
+    this.props.env.ext = ext;
+    const { params } = this.props.match;
+    const { search } = this.props.location;
+    this.loadAlgorithm(params, queryString.parse(search));
+  }
+
   render() {
     const { workspaceVisibles, workspaceWeights } = this.state;
     const { titles, description, saved } = this.props.current;
@@ -233,7 +241,7 @@ class App extends BaseComponent {
           <title>{title}</title>
           <meta name="description" content={description} />
         </Helmet>
-        <Header className={styles.header} onClickTitleBar={this.handleClickTitleBar}
+        <Header className={styles.header} onClickTitleBar={this.handleClickTitleBar} onClickLang={this.handleClickLang}
                 navigatorOpened={navigatorOpened} loadScratchPapers={this.loadScratchPapers}
                 ignoreHistoryBlock={this.ignoreHistoryBlock} />
         <ResizableContainer className={styles.workspace} horizontal weights={workspaceWeights}

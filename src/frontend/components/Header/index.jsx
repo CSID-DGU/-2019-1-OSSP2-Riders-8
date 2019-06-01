@@ -110,6 +110,12 @@ class Header extends BaseComponent {
     }
   }
 
+  changeAlgorithm(e) {
+    var name = e.target.innerText;
+    var ext = languages.find(language => language.name === name).ext; 
+    this.props.onClickLang(ext);
+  }
+
   render() {
     const { className, onClickTitleBar, navigatorOpened } = this.props;
     const { scratchPaper, titles, saved } = this.props.current;
@@ -168,7 +174,7 @@ class Header extends BaseComponent {
               <div className={styles.dropdown}>
                 {
                   languages.map(language => language.ext === ext ? null : (
-                    <ListItem key={language.ext} onClick={() => this.props.setExt(language.ext)}
+                    <ListItem key={language.ext} onClick={e => this.changeAlgorithm(e)}
                               label={language.name} />
                   ))
                 }
