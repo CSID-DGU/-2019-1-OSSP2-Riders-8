@@ -3,5 +3,6 @@
 /build
 /npm-debug.log
 /src/backend/public
+/.vscode
 .DS_Store
 /pm2.config.js

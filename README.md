@@ -17,6 +17,8 @@ If you want to ...
 - **Add or improve an algorithm.**
 
   We have a separate repository for public algorithms. Check out the [contributing guidelines](https://github.com/algorithm-visualizer/algorithms/blob/master/CONTRIBUTING.md) in [`algorithms`](https://github.com/algorithm-visualizer/algorithms) repo.
+  프로젝트에 사용하는 문제 알고리즘 repository:
+  [`문제`](https://github.com/giantim/algorithm-visualizer)
 
 - **Improve the UI.**
 
