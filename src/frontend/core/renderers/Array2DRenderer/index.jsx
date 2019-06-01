@@ -19,7 +19,7 @@ class Array2DRenderer extends Renderer {
 
     return (
       <table className={styles.array_2d}
-             style={{ marginLeft: -this.centerX * 2, marginTop: -this.centerY * 2, fontSize: this.zoom }}>
+             style={{ marginLeft: -this.centerX * 2, marginTop: -this.centerY * 2, transform: `scale(${this.zoom})` }}>
         <tbody>
         <tr className={styles.row}>
           {
@@ -61,4 +61,3 @@ class Array2DRenderer extends Renderer {
 }
 
 export default Array2DRenderer;
-
