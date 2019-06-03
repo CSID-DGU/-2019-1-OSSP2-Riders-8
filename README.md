@@ -12,7 +12,7 @@ Learning algorithms from text and static images is quite boring. There have been
 
 ## 설치
 
-다음을 확인하고 디렉토리 구조를 갖추세요. [contributing guidelines](https://github.com/algorithm-visualizer/algorithms/blob/master/CONTRIBUTING.md) in [`algorithms`](https://github.com/giantim/algorithm-visualizer)
+다음을 확인하고 디렉토리 구조를 갖추세요. [contributing guidelines](https://github.com/algorithm-visualizer/algorithms/blob/master/CONTRIBUTING.md) in [`algorithms`](https://github.com/giantim/algorithms)
 
 ### 윈도우에서 개발환경 갖추기
 1. nodejs 10 version설치
