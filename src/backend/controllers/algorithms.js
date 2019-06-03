@@ -30,11 +30,13 @@ router.route('/')
 
 router.route('/:categoryKey/:algorithmKey')
   .get((req, res, next) => {
-    var ext = '.' + req.query[0];
+    var query = '.' + req.query[0];
+    var ext = query.substr(0, query.length - 1);
+    var isSol = query.substr(query.length - 1);
     const { categoryKey, algorithmKey } = req.params;
     hierarchy.refresh();
     var algorithm = hierarchy.find(categoryKey, algorithmKey);
-    showExtFiles(algorithm.files, ext);
+    showExtFiles(algorithm.files, ext, isSol);
     if (!algorithm) return next(new NotFoundError());
     res.json({ algorithm });
   });
@@ -49,11 +51,17 @@ router.route('/sitemap.txt')
     res.send(urls.join('\n'));
   });
 
-  function showExtFiles(files, ext) {
+  function showExtFiles(files, ext, sol) {
     const indexAry = [];
     files.forEach(function(item, index) {
-      if (!item.name.includes(ext) && !item.name.includes('.md')) {
-        indexAry.push(index);
+      if (sol == 0) {
+        if ((!item.name.includes(ext) && !item.name.includes('.md')) || item.name.includes('edu')) {
+          indexAry.push(index);
+        }
+      } else if (sol == 1) {
+        if (!item.name.includes(ext) && !item.name.includes('.md')) {
+          indexAry.push(index);
+        }
       }
     });
     var index = 0;

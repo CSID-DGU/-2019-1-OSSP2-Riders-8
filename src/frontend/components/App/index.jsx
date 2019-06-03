@@ -38,6 +38,7 @@ class App extends BaseComponent {
     this.loadScratchPapers = this.loadScratchPapers.bind(this);
     this.handleChangeWorkspaceWeights = this.handleChangeWorkspaceWeights.bind(this);
     this.handleClickLang = this.handleClickLang.bind(this);
+    this.handleClickSol = this.handleClickSol.bind(this);
   }
 
   componentDidMount() {
@@ -146,8 +147,9 @@ class App extends BaseComponent {
       .catch(this.handleError);
   }
 
-  loadAlgorithm({ categoryKey, algorithmKey, gistId }, { visualizationId }) {
+  loadAlgorithm({ categoryKey, algorithmKey, gistId }, { visualizationId }, sol = 0) {
     const { ext } = this.props.env;
+    const isSol = ext + sol;
     const fetch = () => {
       if (window.__PRELOADED_ALGORITHM__) {
         this.props.setAlgorithm(window.__PRELOADED_ALGORITHM__);
@@ -156,7 +158,7 @@ class App extends BaseComponent {
         delete window.__PRELOADED_ALGORITHM__;
         return Promise.reject(new Error('Algorithm Not Found'));
       } else if (categoryKey && algorithmKey) {
-        return AlgorithmApi.getAlgorithm(categoryKey, algorithmKey, ext)
+        return AlgorithmApi.getAlgorithm(categoryKey, algorithmKey, isSol)
           .then(({ algorithm }) => this.props.setAlgorithm(algorithm));
       } else if (gistId === 'new' && visualizationId) {
         return VisualizationApi.getVisualization(visualizationId)
@@ -228,6 +230,13 @@ class App extends BaseComponent {
     this.loadAlgorithm(params, queryString.parse(search));
   }
 
+  handleClickSol() {
+    const { params } = this.props.match;
+    const { search } = this.props.location;
+    const sol = 1;
+    this.loadAlgorithm(params, queryString.parse(search), sol);
+  }
+
   render() {
     const { workspaceVisibles, workspaceWeights } = this.state;
     const { titles, description, saved } = this.props.current;
@@ -243,7 +252,7 @@ class App extends BaseComponent {
         </Helmet>
         <Header className={styles.header} onClickTitleBar={this.handleClickTitleBar} onClickLang={this.handleClickLang}
                 navigatorOpened={navigatorOpened} loadScratchPapers={this.loadScratchPapers}
-                ignoreHistoryBlock={this.ignoreHistoryBlock} />
+                ignoreHistoryBlock={this.ignoreHistoryBlock} onClickSol={this.handleClickSol}/>
         <ResizableContainer className={styles.workspace} horizontal weights={workspaceWeights}
                             visibles={workspaceVisibles} onChangeWeights={this.handleChangeWorkspaceWeights}>
           <Navigator />

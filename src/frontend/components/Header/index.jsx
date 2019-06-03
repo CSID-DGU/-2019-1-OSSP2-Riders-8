@@ -15,6 +15,7 @@ import faTrashAlt from '@fortawesome/fontawesome-free-solid/faTrashAlt';
 import faSave from '@fortawesome/fontawesome-free-solid/faSave';
 import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook';
 import faStar from '@fortawesome/fontawesome-free-solid/faStar';
+import faBookOpen from '@fortawesome/fontawesome-free-solid/faBookOpen';
 import { GitHubApi } from '/apis';
 import { classes, refineGist } from '/common/util';
 import { actions } from '/reducers';
@@ -117,7 +118,7 @@ class Header extends BaseComponent {
   }
 
   render() {
-    const { className, onClickTitleBar, navigatorOpened } = this.props;
+    const { className, onClickTitleBar, navigatorOpened, onClickSol } = this.props;
     const { scratchPaper, titles, saved } = this.props.current;
     const { ext, user } = this.props.env;
 
@@ -179,6 +180,9 @@ class Header extends BaseComponent {
                   ))
                 }
               </div>
+            </Button>
+            <Button className={styles.btn_solution} icon={faBookOpen} onClick={onClickSol}>
+              <Ellipsis>Solution</Ellipsis>
             </Button>
           </div>
           <Player className={styles.section} />
