@@ -202,6 +202,7 @@ class App extends BaseComponent {
     const { ext } = this.props.env;
     const { files } = this.props.current;
     const editingFile = files.find(file => extension(file.name) === 'json') ||
+      files.find(file => extension(file.name) === 'md') ||
       files.find(file => extension(file.name) === ext) ||
       files.find(file => exts.includes(extension(file.name))) ||
       files[files.length - 1];
