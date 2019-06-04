@@ -10,7 +10,7 @@ const router = express.Router();
 const downloadCategories = () => (
   fs.pathExistsSync(hierarchy.path) ?
     execute(`git fetch && git reset --hard origin/master`, { cwd: hierarchy.path }) :
-    execute(`git clone https://github.com/algorithm-visualizer/algorithms.git ${hierarchy.path}`)
+    execute(`git clone https://github.com/giantim/algorithms ${hierarchy.path}`)
 ).then(() => hierarchy.refresh());
 
 downloadCategories().catch(console.error);
