@@ -69,6 +69,7 @@ class Player extends BaseComponent {
   build(file) {
     this.reset();
     if (!file) return;
+    if (file.name.includes('edu')) return;
 
     if (this.tracerApiSource) this.tracerApiSource.cancel();
     this.tracerApiSource = axios.CancelToken.source();
