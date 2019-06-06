@@ -54,12 +54,12 @@ router.route('/sitemap.txt')
   function showExtFiles(files, ext, sol) {
     const indexAry = [];
     files.forEach(function(item, index) {
-      if (sol == 0) {
-        if ((!item.name.includes(ext) && !item.name.includes('.md')) || item.name.includes('edu')) {
+      if (sol == 1) {
+        if (!item.name.includes(ext) && !item.name.includes('.md')) {
           indexAry.push(index);
         }
-      } else if (sol == 1) {
-        if (!item.name.includes(ext) && !item.name.includes('.md')) {
+      } else if (sol == 0) {
+        if (!item.name.includes('.md') && !item.name.includes('education' + ext))  {
           indexAry.push(index);
         }
       }
