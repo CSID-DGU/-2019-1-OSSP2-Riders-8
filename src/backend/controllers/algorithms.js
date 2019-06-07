@@ -59,7 +59,7 @@ router.route('/sitemap.txt')
           indexAry.push(index);
         }
       } else if (sol == 0) {
-        if (!item.name.includes('.md') && !item.name.includes('education' + ext))  {
+        if (!item.name.includes('.md') && !item.name.includes('_edu' + ext))  {
           indexAry.push(index);
         }
       }
