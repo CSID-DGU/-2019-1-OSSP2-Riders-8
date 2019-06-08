@@ -10,29 +10,12 @@ Learning algorithms from text and static images is quite boring. There have been
 
 [![Screenshot](https://raw.githubusercontent.com/algorithm-visualizer/algorithm-visualizer/master/branding/screenshot.png)](https://algorithm-visualizer.org/)
 
-## Contributing
+## 설치
 
-If you want to ...
-
-- **Add or improve an algorithm.**
-
-  We have a separate repository for public algorithms. Check out the [contributing guidelines](https://github.com/algorithm-visualizer/algorithms/blob/master/CONTRIBUTING.md) in [`algorithms`](https://github.com/algorithm-visualizer/algorithms) repo.
-  프로젝트에 사용하는 문제 알고리즘 repository:
-  [`문제`](https://github.com/giantim/algorithm-visualizer)
-
-- **Improve the UI.**
-
-  Check out the [contributing guidelines](https://github.com/algorithm-visualizer/algorithm-visualizer/blob/master/CONTRIBUTING.md) in this repo. The [directory structure](https://github.com/algorithm-visualizer/algorithm-visualizer/blob/master/PROJECT_DETAILS.md#algorithm-visualizer) might be helpful as well.
-
-- **Revise the specifications of visualization libraries.**
-  
-  Making changes to the specifications is often followed by updating visualization libraries for every supported language and the affected public algorithms accordingly. It is highly recommended to read the entire [project details](https://github.com/algorithm-visualizer/algorithm-visualizer/blob/master/PROJECT_DETAILS.md) and to raise an issue about your proposal before working on it.
-
-- **Fix issues in a visualization library for a specific langauge.**
-
-  Check out the contributing guidelines ([JavaScript](https://github.com/algorithm-visualizer/tracers.js/blob/master/CONTRIBUTING.md), [C++](https://github.com/algorithm-visualizer/tracers.cpp/blob/master/CONTRIBUTING.md), and [Java](https://github.com/algorithm-visualizer/tracers.java/blob/master/CONTRIBUTING.md)) in the repo of the visualization library.
+다음을 확인하고 디렉토리 구조를 갖추세요. [contributing guidelines](https://github.com/algorithm-visualizer/algorithms/blob/master/CONTRIBUTING.md) in [`algorithms`](https://github.com/giantim/algorithms)
 
 ### 윈도우에서 개발환경 갖추기
 1. nodejs 10 version설치
 2. Docker 설치 (windows pro 버전만 실행 가능)
-3. environment.js에서 NODE_ENV = 'development'로 바꿔서 개발 모드로 로컬에서 실행하기 
+3. npm install 모듈 설치
+4. environment.js에서 NODE_ENV = 'development'로 바꿔서 개발 모드로 로컬에서 실행하기 
