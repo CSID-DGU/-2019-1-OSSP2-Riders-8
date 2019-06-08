@@ -12,6 +12,7 @@ import { TracerApi } from '/apis';
 import { actions } from '/reducers';
 import { BaseComponent, Button, ProgressBar } from '/components';
 import styles from './stylesheet.scss';
+import { flag, isBuild } from '../../common/dirty';
 
 @connect(({ current, player }) => ({ current, player }), actions)
 class Player extends BaseComponent {
@@ -69,7 +70,12 @@ class Player extends BaseComponent {
   build(file) {
     this.reset();
     if (!file) return;
-    if (file.name.includes('edu')) return;
+    if (file.name.includes('edu')) {
+      const condition = isBuild(file.content, file.name);
+      if (condition === flag[0] || condition === flag[1]) {
+        return;
+      }
+    }
 
     if (this.tracerApiSource) this.tracerApiSource.cancel();
     this.tracerApiSource = axios.CancelToken.source();
@@ -154,21 +160,21 @@ class Player extends BaseComponent {
     return (
       <div className={classes(styles.player, className)}>
         <Button icon={faWrench} primary disabled={building} inProgress={building}
-                onClick={() => this.build(editingFile)}>
+          onClick={() => this.build(editingFile)}>
           {building ? 'Building' : 'Build'}
         </Button>
         {
           playing ? (
             <Button icon={faPause} primary active onClick={() => this.pause()}>Pause</Button>
           ) : (
-            <Button icon={faPlay} primary onClick={() => this.resume(true)}>Play</Button>
-          )
+              <Button icon={faPlay} primary onClick={() => this.resume(true)}>Play</Button>
+            )
         }
         <Button icon={faChevronLeft} primary disabled={!this.isValidCursor(cursor - 1)} onClick={() => this.prev()} />
         <ProgressBar className={styles.progress_bar} current={cursor} total={chunks.length}
-                     onChangeProgress={progress => this.handleChangeProgress(progress)} />
+          onChangeProgress={progress => this.handleChangeProgress(progress)} />
         <Button icon={faChevronRight} reverse primary disabled={!this.isValidCursor(cursor + 1)}
-                onClick={() => this.next()} />
+          onClick={() => this.next()} />
         <div className={styles.speed}>
           Speed
           <InputRange
