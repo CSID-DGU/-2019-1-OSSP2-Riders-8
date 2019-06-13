@@ -5,13 +5,13 @@
 
 # 오픈소스
 
-Algorithm-Visualizer: [https://github.com/algorithm-visualizer/algorithm-visualizer](https://github.com/algorithm-visualizer/algorithm-visualizer)
+- Algorithm-Visualizer: [https://github.com/algorithm-visualizer/algorithm-visualizer](https://github.com/algorithm-visualizer/algorithm-visualizer)
 
-Algorithms: [https://github.com/algorithm-visualizer/algorithms](https://github.com/algorithm-visualizer/algorithms)
+- Algorithms: [https://github.com/algorithm-visualizer/algorithms](https://github.com/algorithm-visualizer/algorithms)
 
-Code Editor: [https://github.com/securingsincity/react-ace](https://github.com/securingsincity/react-ace)
+- Code Editor: [https://github.com/securingsincity/react-ace](https://github.com/securingsincity/react-ace)
 
-Brace: [https://github.com/thlorenz/brace](https://github.com/thlorenz/brace)
+- Brace: [https://github.com/thlorenz/brace](https://github.com/thlorenz/brace)
 
 ## 설치
 
