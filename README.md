@@ -6,8 +6,11 @@
 # 오픈소스
 
 Algorithm-Visualizer: [https://github.com/algorithm-visualizer/algorithm-visualizer](https://github.com/algorithm-visualizer/algorithm-visualizer)
+
 Algorithms: [https://github.com/algorithm-visualizer/algorithms](https://github.com/algorithm-visualizer/algorithms)
+
 Code Editor: [https://github.com/securingsincity/react-ace](https://github.com/securingsincity/react-ace)
+
 Brace: [https://github.com/thlorenz/brace](https://github.com/thlorenz/brace)
 
 ## 설치
@@ -17,23 +20,24 @@ Brace: [https://github.com/thlorenz/brace](https://github.com/thlorenz/brace)
 - Docker
 - Visual Studio Code
 
+
 - 로컬에서 실행하기
-1. 로컬에 저장소를 설치합니다.
+    1. 로컬에 저장소를 설치합니다.
 
-    ``` bash
-    git clone https://github.com/CSID-DGU/2019-1-OSSP2-Riders-8.git
-    ```
+        ``` bash
+        git clone https://github.com/CSID-DGU/2019-1-OSSP2-Riders-8.git
+        ```
 
-2. 디렉토리 구조를 갖춥니다.
+    2. 디렉토리 구조를 갖춥니다.
 
-    ``` bash
-    cd 2019-1-OSSP2-Riders-8/src/backend
-    mkdir public
-    cd public
-    mkdir codes
-    git init
-    git clone https://github.com/giantim/algorithms.git
-    git install
-    ```
+        ``` bash
+        cd 2019-1-OSSP2-Riders-8/src/backend
+        mkdir public
+        cd public
+        mkdir codes
+        git init
+        git clone https://github.com/giantim/algorithms.git
+        git install
+        ```
 
-3. Visual Studio Code를 이용하여 서버를 실행합니다.
+    3. Visual Studio Code를 이용하여 서버를 실행합니다.
