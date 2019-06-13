@@ -1,20 +1,39 @@
-# Algorithm Visualizer
+# 2019-1-OSSP2-Riders-8
 
-> Algorithm Visualizer is an interactive online platform that visualizes algorithms from code.
-
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=flat-square)](https://gitter.im/algorithm-visualizer)
-[![GitHub contributors](https://img.shields.io/github/contributors/algorithm-visualizer/algorithm-visualizer.svg?style=flat-square)](https://github.com/algorithm-visualizer/algorithm-visualizer/graphs/contributors)
+> Algorithm Visualizer 개선하기.
 [![GitHub license](https://img.shields.io/github/license/algorithm-visualizer/algorithm-visualizer.svg?style=flat-square)](https://github.com/algorithm-visualizer/algorithm-visualizer/blob/master/LICENSE)
 
-Learning algorithms from text and static images is quite boring. There have been many great websites that view animations of various algorithms though, for us being coders, nothing can be more comprehensible than visualizing the actual working code.
+# 오픈소스
 
-[![Screenshot](https://raw.githubusercontent.com/algorithm-visualizer/algorithm-visualizer/master/branding/screenshot.png)](https://algorithm-visualizer.org/)
+Algorithm-Visualizer: [https://github.com/algorithm-visualizer/algorithm-visualizer](https://github.com/algorithm-visualizer/algorithm-visualizer)
+Algorithms: [https://github.com/algorithm-visualizer/algorithms](https://github.com/algorithm-visualizer/algorithms)
+Code Editor: [https://github.com/securingsincity/react-ace](https://github.com/securingsincity/react-ace)
+Brace: [https://github.com/thlorenz/brace](https://github.com/thlorenz/brace)
 
 ## 설치
 
-다음을 확인하고 디렉토리 구조를 갖추세요. [contributing guidelines](https://github.com/algorithm-visualizer/algorithms/blob/master/CONTRIBUTING.md) in [`algorithms`](https://github.com/giantim/algorithms)
+프로젝트를 설치하기 전에 확인할 사항
+- Node JS: 10.x (LTS)
+- Docker
+- Visual Studio Code
 
-### 윈도우에서 개발환경 갖추기
-1. nodejs 10 version설치
-2. Docker 설치 (windows pro 버전만 실행 가능)
-3. environment.js에서 NODE_ENV = 'development'로 바꿔서 개발 모드로 로컬에서 실행하기 
+- 로컬에서 실행하기
+1. 로컬에 저장소를 설치합니다.
+
+    ``` bash
+    git clone https://github.com/CSID-DGU/2019-1-OSSP2-Riders-8.git
+    ```
+
+2. 디렉토리 구조를 갖춥니다.
+
+    ``` bash
+    cd 2019-1-OSSP2-Riders-8/src/backend
+    mkdir public
+    cd public
+    mkdir codes
+    git init
+    git clone https://github.com/giantim/algorithms.git
+    git install
+    ```
+
+3. Visual Studio Code를 이용하여 서버를 실행합니다.

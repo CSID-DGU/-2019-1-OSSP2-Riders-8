@@ -10,12 +10,15 @@ Learning algorithms from text and static images is quite boring. There have been
 
 [![Screenshot](https://raw.githubusercontent.com/algorithm-visualizer/algorithm-visualizer/master/branding/screenshot.png)](https://algorithm-visualizer.org/)
 
-## 설치
+## 사용법
+1. 학습할 언어를 선택합니다.
+2. 알고리즘을 선택합니다.
+3. 알고리즘의 설명을 읽고 문제를 선택해서 답을 작성합니다.
+4. Build를 누르면 결과가 출력됩니다.
+5. 결과를 확인할 때 Play 또는 직접 단계를 확인하세요. Speed를 조절해서 변화를 확인하세요.
+6. 만약, 결과가 원하는 값으로 출력되지 않는다면 Solution버튼을 눌러서 답을 확인하세요.
 
-다음을 확인하고 디렉토리 구조를 갖추세요. [contributing guidelines](https://github.com/algorithm-visualizer/algorithms/blob/master/CONTRIBUTING.md) in [`algorithms`](https://github.com/giantim/algorithms)
+## 개선된 점
+- 알고리즘 선별: 학습 빈도가 높은 알고리즘을 선별하여 제공합니다.
 
-### 윈도우에서 개발환경 갖추기
-1. nodejs 10 version설치
-2. Docker 설치 (windows pro 버전만 실행 가능)
-3. npm install 모듈 설치
-4. environment.js에서 NODE_ENV = 'development'로 바꿔서 개발 모드로 로컬에서 실행하기 
+- 학습 문제 제공: 선택한 알고리즘을 직접 구현해 볼 수 있는 문제를 제공합니다.
