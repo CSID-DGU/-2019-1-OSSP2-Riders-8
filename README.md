@@ -40,4 +40,10 @@
         git install
         ```
 
-    3. Visual Studio Code를 이용하여 서버를 실행합니다.
+    3. node_modules를 수정해야 합니다. 아래를 설치해서 mode와 theme를 node_modules/brace에 복사합니다.
+
+    ``` bash
+    git clone https://github.com/giantim/react-ace_theme.git
+    ```
+
+    4. Visual Studio Code를 이용하여 서버를 실행합니다.
