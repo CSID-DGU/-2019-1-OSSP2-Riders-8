@@ -12,7 +12,7 @@ import { TracerApi } from '/apis';
 import { actions } from '/reducers';
 import { BaseComponent, Button, ProgressBar } from '/components';
 import styles from './stylesheet.scss';
-import { flag, isBuild } from '../../common/dirty';
+import { flag, isBuild, setOldName } from '../../common/dirty';
 
 @connect(({ current, player }) => ({ current, player }), actions)
 class Player extends BaseComponent {
@@ -70,9 +70,11 @@ class Player extends BaseComponent {
   build(file) {
     this.reset();
     if (!file) return;
-    if (file.name.includes('edu')) {
+    if (file.name.includes('README.md')) {
+      setOldName(file.content, file.name);
+    } else if (file.name.includes('edu')) {
       const condition = isBuild(file.content, file.name);
-      if (condition === flag[0] || condition === flag[1]) {
+      if (condition === flag[0] || condition === flag[1] || condition === flag[2]) {
         return;
       }
     }

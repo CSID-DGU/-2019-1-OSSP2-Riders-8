@@ -1,6 +1,7 @@
 var file;
+var oldName;
 const flag = [
-    'setInit', 'nextFile', 'goBuild'
+    'setInit', 'nextFile', 'noBuild'
 ];
 
 module.exports.isBuild = function(content, name) {
@@ -13,6 +14,11 @@ module.exports.isBuild = function(content, name) {
         return flag[1];
     }
 };
+
+module.exports.setOldName = function(content, name) {
+    file = null;
+    file = [content, name];
+}
 
 export {
     flag
