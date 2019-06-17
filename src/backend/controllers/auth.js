@@ -10,7 +10,7 @@ const request = (req, res, next) => {
 
 const response = (req, res, next) => {
   const { code } = req.query;
-
+  console.log(code);
   GitHubApi.getAccessToken(code).then(({ access_token }) => {
     res.send(`<script>window.opener.signIn('${access_token}');window.close();</script>`);
   }).catch(next);

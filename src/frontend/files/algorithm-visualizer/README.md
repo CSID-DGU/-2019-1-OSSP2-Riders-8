@@ -8,8 +8,6 @@
 
 Learning algorithms from text and static images is quite boring. There have been many great websites that view animations of various algorithms though, for us being coders, nothing can be more comprehensible than visualizing the actual working code.
 
-[![Screenshot](https://raw.githubusercontent.com/algorithm-visualizer/algorithm-visualizer/master/branding/screenshot.png)](https://algorithm-visualizer.org/)
-
 ## 사용법
 1. 학습할 언어를 선택합니다.
 2. 알고리즘을 선택합니다.
@@ -22,3 +20,5 @@ Learning algorithms from text and static images is quite boring. There have been
 - 알고리즘 선별: 학습 빈도가 높은 알고리즘을 선별하여 제공합니다.
 
 - 학습 문제 제공: 선택한 알고리즘을 직접 구현해 볼 수 있는 문제를 제공합니다.
+
+[![Screenshot](https://raw.githubusercontent.com/algorithm-visualizer/algorithm-visualizer/master/branding/screenshot.png)](https://algorithm-visualizer.org/)
